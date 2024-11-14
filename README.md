@@ -124,8 +124,8 @@ plt.ylabel("Predicted LogS")
 plt.show()
 ```
 
-### Example Plot
-![Scatter plot of predictions](https://github.com/Simonwachira7318/Solubility-Prediction/blob/main/image.png)
+### Scatter Plot of prediction
+![Scatter plot of predictions](https://github.com/Simonwachira7318/Solubility-Prediction/blob/main/image.png?raw=true)
 
 ## Conclusion
 

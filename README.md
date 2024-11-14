@@ -103,6 +103,7 @@ plt.xlabel("Experimental LogS")
 plt.ylabel("Predicted LogS")
 plt.show()
 Example Plot
+![Scatter plot of predictions](images/prediction_scatter.png)
 
 #Conclusion
 This model provides a baseline for predicting the solubility of compounds, with reasonable accuracy for initial applications. Further tuning and feature engineering may improve performance, and additional metrics such as MAE or RMSE could provide more insight.
@@ -116,5 +117,4 @@ matplotlib
 To install them individually, use:
 
 bash
-Copy code
 pip install pandas numpy scikit-learn matplotlib

@@ -32,41 +32,56 @@ This project builds a machine learning model to predict the solubility of chemic
 
 ## Installation and Setup
 
-Set up a Virtual Environment
-Create and activate a virtual environment for dependency management.
-bash
-Copy code
+### Set up a Virtual Environment
+
+Create and activate a virtual environment for dependency management:
+
+```bash
 python -m venv myenv
-Windows: myenv\Scripts\activate
-MacOS/Linux: source myenv/bin/activate
-Install Dependencies
-Install the required libraries listed in the requirements.txt file.
-bash
-Copy code
+
+# Windows
+myenv\Scripts\activate
+
+# MacOS/Linux
+source myenv/bin/activate
+```
+
+### Install Dependencies
+
+Install the required libraries listed in the requirements.txt file:
+
+```bash
 pip install -r requirements.txt
-Data Preparation
+```
+
+## Data Preparation
+
 The dataset contains information on various chemical compounds. The key steps for data preparation include:
 
-Loading the Data: Import the dataset into a DataFrame using pandas.
-Cleaning: Handle missing values, normalize data, and split the data into training and testing sets.
-Feature Selection: Select features relevant to predicting solubility.
-python
-Copy code
+1. Loading the Data: Import the dataset into a DataFrame using pandas.
+2. Cleaning: Handle missing values, normalize data, and split the data into training and testing sets.
+3. Feature Selection: Select features relevant to predicting solubility.
+
+```python
 # Sample code for loading and cleaning data
 import pandas as pd
 
 data = pd.read_csv('data/solubility_data.csv')
 data = data.dropna()
 # Additional cleaning and feature selection
-Model Training and Evaluation
-1. Model Selection
+```
+
+## Model Training and Evaluation
+
+### 1. Model Selection
+
 We utilize a Random Forest Regressor for its robustness in handling non-linear relationships. The model is trained to minimize the mean squared error between the actual and predicted values.
 
-2. Training
-Split the dataset into training and testing sets, then fit the model on the training data.
+### 2. Training
 
-python
-Copy code
+Split the dataset into training and testing sets, then fit the model on the training data:
+
+```python
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error
@@ -77,20 +92,25 @@ X_train, X_test, y_train, y_test = train_test_split(features, target, test_size=
 # Initialize and train the model
 model = RandomForestRegressor()
 model.fit(X_train, y_train)
-3. Evaluation
-The model's performance is evaluated using metrics such as Mean Squared Error (MSE) and R-Squared (R²) to gauge accuracy.
+```
 
-python
-Copy code
+### 3. Evaluation
+
+The model's performance is evaluated using metrics such as Mean Squared Error (MSE) and R-Squared (R²) to gauge accuracy:
+
+```python
 y_pred = model.predict(X_test)
 mse = mean_squared_error(y_test, y_pred)
 r2 = r2_score(y_test, y_pred)
-Results and Visualizations
-Scatter Plot of Predictions
-A scatter plot comparing experimental and predicted values helps visualize model performance.
+```
 
-python
-Copy code
+## Results and Visualizations
+
+### Scatter Plot of Predictions
+
+A scatter plot comparing experimental and predicted values helps visualize model performance:
+
+```python
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -102,19 +122,25 @@ plt.plot(y_test, p(y_test), "#F8766D")
 plt.xlabel("Experimental LogS")
 plt.ylabel("Predicted LogS")
 plt.show()
-Example Plot
+```
+
+### Example Plot
 ![Scatter plot of predictions](https://github.com/Simonwachira7318/Solubility-Prediction/blob/main/image.png)
 
-#Conclusion
+## Conclusion
+
 This model provides a baseline for predicting the solubility of compounds, with reasonable accuracy for initial applications. Further tuning and feature engineering may improve performance, and additional metrics such as MAE or RMSE could provide more insight.
 
-#Dependencies
+## Dependencies
+
 The primary dependencies for this project are:
-pandas
-numpy
-scikit-learn
-matplotlib
+- pandas
+- numpy
+- scikit-learn
+- matplotlib
+
 To install them individually, use:
 
-bash
+```bash
 pip install pandas numpy scikit-learn matplotlib
+```

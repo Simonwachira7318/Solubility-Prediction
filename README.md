@@ -1,6 +1,7 @@
 # Solubility Prediction Model
+# CAT 2
 
-**Author**: Maina S Wachira  
+**Name**: Maina S Wachira  
 **Registration Number**: PA106/G/14962/21  
 **Course**: B.Sc. Software Engineering (Y4S1)
 
@@ -103,12 +104,11 @@ plt.ylabel("Predicted LogS")
 plt.show()
 Example Plot
 
-Conclusion
+#Conclusion
 This model provides a baseline for predicting the solubility of compounds, with reasonable accuracy for initial applications. Further tuning and feature engineering may improve performance, and additional metrics such as MAE or RMSE could provide more insight.
 
-Dependencies
+#Dependencies
 The primary dependencies for this project are:
-
 pandas
 numpy
 scikit-learn
